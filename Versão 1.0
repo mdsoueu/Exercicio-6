@@ -1,0 +1,47 @@
+#include <stdio.h>
+
+int main() {
+  int Codigo=0;
+  /*int num[15]={'1','2','3','4','5','6','7','8','9','10','11','12','13','14','15'};*/
+  int naoperecivel=0, perecivel=0, vestuario=0, higiene=0, limpeza=0;
+
+
+  for(int produto=0; produto<8; produto++){
+    printf("\nDigite o codigo do produto:");
+    scanf("%d",&Codigo);
+
+    if(Codigo == 1){
+        printf("Alimento nao-perecivel\n");
+        naoperecivel++; //contador
+        }
+    else 
+        if(Codigo >= 2 && Codigo <= 4){
+            printf("Alimento perecível\n");
+          perecivel++; //contador
+          }
+        else 
+            if(Codigo == 5 || Codigo == 6){
+                printf("Vestuário\n");
+                vestuario++; //contador
+                }
+            else 
+                if(Codigo == 7){
+                    printf("Higiene pessoal\n");
+                    higiene++; //contador
+                    }
+                else  
+                    if(Codigo >= 8 && Codigo <= 15){
+                        printf("Limpeza e utensílios domésticos\n");
+                        limpeza++; //contador
+                      }
+                    else
+                      if(Codigo!=1 && Codigo!=2 && Codigo!=3 && Codigo!=4 && Codigo!=5 && Codigo!=6 && Codigo!=7 && Codigo!=8 && Codigo!=9 && Codigo!=10 && Codigo!=12 && Codigo!=13 && Codigo!=14 && Codigo!=15)
+                          printf("Código inválido\n");
+    }
+    printf("\nTotal de produtos classificados em Alimento perecível: %d ", perecivel);
+    printf("\nTotal de produtos classificados em Alimento não-perecível: %d ", naoperecivel);
+    printf("\nTotal de produtos classificados em Vestuário: %d ", vestuario);
+    printf("\nTotal de produtos classificados em Higiene pessoal: %d ", higiene);
+    printf("\nTotal de produtos classificados em Limpeza e utensílios domésticos: %d ", limpeza);
+  return 0;
+}

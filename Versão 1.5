@@ -1,0 +1,59 @@
+#include <stdio.h>
+
+int main() {
+  int codigo=0;
+  int num[15][2]={'1','2','3','4','5','6','7','8','9','10','11','12','13','14','15'};
+  int naoperecivel=0, perecivel=0, vestuario=0, higiene=0, limpeza=0;
+
+  printf(" ------------------------------------------------------\n");
+  printf("|     CÓDIGO     |             CLASSIFICAÇÃO           |\n");
+  printf("|------------------------------------------------------|\n");
+  printf("|       1        |         Alimento não-perecível      |\n");
+  printf("|------------------------------------------------------|\n");
+  printf("|     2 a 4      |           Alimento perecível        |\n");
+  printf("|------------------------------------------------------|\n");
+  printf("|     5 e 6      |               Vestuário             |\n");
+  printf("|------------------------------------------------------|\n");
+  printf("|       7        |            Higiene pessoal          |\n");
+  printf("|------------------------------------------------------|\n");
+  printf("|     8 a 15     |    Limpeza e utensílios domésticos  |\n");
+  printf(" ------------------------------------------------------\n");
+  
+  for(int produto=0; produto<3; produto++){
+    printf("\nDigite o codigo do produto:");
+    scanf("%d",& codigo);
+    
+    if(codigo == 1){
+       printf("Alimento não-perecível\n");
+       naoperecivel++; //contador
+       }
+    else 
+      if(codigo >= 2 && codigo <= 4){
+         printf("Alimento perecível\n");
+         perecivel++; //contador
+         }
+      else 
+        if(codigo == 5 || codigo == 6){
+           printf("Vestuário\n");
+           vestuario++; //contador
+           }
+        else 
+          if(codigo == 7){
+             printf("Higiene pessoal\n");
+             higiene++; //contador
+             }
+          else  
+            if(codigo >= 8 && codigo <= 15){
+              printf("Limpeza e utensílios domésticos\n");
+              limpeza++; //contador
+              }
+            else
+              printf("Código inválido\n");
+    }
+  printf("\nTotal de produtos classificados em Alimento perecível: %d ", perecivel);
+  printf("\nTotal de produtos classificados em Alimento não-perecível: %d ", naoperecivel);
+  printf("\nTotal de produtos classificados em Vestuário: %d ", vestuario);
+  printf("\nTotal de produtos classificados em Higiene pessoal: %d ", higiene);
+  printf("\nTotal de produtos classificados em Limpeza e utensílios domésticos: %d ", limpeza);
+  return 0;
+}
